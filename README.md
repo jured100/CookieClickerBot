@@ -7,3 +7,6 @@ But yeah, this thing is not efficient, I did not use any math, merely my intuiti
 They are not as good as if a human played the game (probably), but the bot can go on forever and a human cannot :)
 
 For any future employers: please do not look at this monstrosity. It is horrible and something I put together in about an hour.
+
+The project does include its own venv (virtual environment) so, as long as you have python installed (and probably also pycharm I dont know), it should work. If it doesn't...
+well write a comment and I'll make an exe out of this.
