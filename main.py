@@ -1,6 +1,8 @@
 import pyautogui
 import os
 import time
+import _thread
+pyautogui.PAUSE = 0.025
 
 # import mss
 
@@ -41,9 +43,7 @@ def cursordoer():
     if coords3 is not None:
         cursorcount += 1
         pyautogui.click(coords3)
-        time.sleep(0.05)
         pyautogui.moveTo(cookiecoords)
-        time.sleep(0.05)
 
 
 def grandmadoer():
@@ -56,9 +56,7 @@ def grandmadoer():
     else:
         grandmacount += 1
         pyautogui.click(coords3)
-        time.sleep(0.05)
         pyautogui.moveTo(cookiecoords)
-        time.sleep(0.05)
 
 
 def farmdoer():
@@ -70,9 +68,7 @@ def farmdoer():
     else:
         farmcount += 1
         pyautogui.click(coords3)
-        time.sleep(0.05)
         pyautogui.moveTo(cookiecoords)
-        time.sleep(0.05)
 
 
 def minedoer():
@@ -84,9 +80,7 @@ def minedoer():
     else:
         minecount += 1
         pyautogui.click(coords3)
-        time.sleep(0.05)
         pyautogui.moveTo(cookiecoords)
-        time.sleep(0.05)
 
 
 def factorydoer():
@@ -98,9 +92,7 @@ def factorydoer():
     else:
         factorycount += 1
         pyautogui.click(coords3)
-        time.sleep(0.05)
         pyautogui.moveTo(cookiecoords)
-        time.sleep(0.05)
 
 
 def bankdoer():
@@ -112,9 +104,7 @@ def bankdoer():
     else:
         bankcount += 1
         pyautogui.click(coords3)
-        time.sleep(0.05)
         pyautogui.moveTo(cookiecoords)
-        time.sleep(0.05)
 
 
 def templedoer():
@@ -126,36 +116,34 @@ def templedoer():
     else:
         templecount += 1
         pyautogui.click(coords3)
-        time.sleep(0.05)
         pyautogui.moveTo(cookiecoords)
-        time.sleep(0.05)
+
+#def click():
+    #while True:
+        #pyautogui.click()
 
 
 flagchecker = -1
 upgradechecker = -1
+#_thread.start_new_thread( click() )
 while True:
-    #screen = pyautogui.screenshot()
-    #screen.save(cwd + 'current.png')
+    screen = pyautogui.screenshot()
+    screen.save(cwd + 'current.png')
     flagchecker += 1
     upgradechecker += 1
-    screen = pyautogui.screenshot(region=(1510, 400, 350, 600))
-    screen.save(cwd + 'current.png')
     for i in range(20):
         pyautogui.click()
-    #coords = pyautogui.locateOnScreen(cwd + "godcookie.png", confidence=0.9)
-    #if coords is not None:
-        #pyautogui.click(coords)
-        #time.sleep(0.05)
-        #pyautogui.moveTo(cookiecoords)
-        #time.sleep(0.05)
+    coords = pyautogui.locateOnScreen(cwd + "godcookie.png", confidence=0.9)
+    if coords is not None:
+        pyautogui.click(coords)
+        pyautogui.moveTo(cookiecoords)
+    screen = pyautogui.screenshot(region=(1510, 400, 350, 600))
+    screen.save(cwd + 'current.png')
     coords=0
     if upgradechecker == 25:
         pyautogui.moveTo(1560, 300)
-        time.sleep(0.05)
         pyautogui.click()
-        time.sleep(0.05)
         pyautogui.moveTo(cookiecoords)
-        time.sleep(0.05)
         upgradechecker=0
 
     if not grandmaflag:
